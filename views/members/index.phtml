@@ -1,0 +1,21 @@
+
+<div class="user">
+	<table>
+		<tr>
+			<td>
+				<img class="profile" src="/images/profiles/profile<?php echo $_SESSION['idMember'];?>.jpg">
+			</td>
+			<td>
+				<h1>Pseudo <?php echo $_SESSION['pseudo']?></h1>
+				<h2>Email :</h2>
+				<p class="email"><?php echo $_SESSION['email']?></p>
+				<h2>Website : </h2>
+				<p class="website"><?php echo $_SESSION['website']?></p>
+			</td>
+		</tr>
+	</table>
+	<h2 class="description">Description :</h2>
+	<p class="description"><?php echo $_SESSION['description']?></p>
+	<a href="../profile/edit"><input id="edit" type="submit" value="Edit profil"></a>
+</div>
+<!-- end of .profile -->

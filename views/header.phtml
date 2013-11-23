@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<link rel="stylesheet" href="../default.css"/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<body>
+	<header>
+		<a href="index.php"> <img alt="image" id="Logo" src="../images/Logo-MedCenter.png"></a>
+		<div id = "motto"> Your health online</div> 
+		
+		<!-- if the user is connected -->
+		<?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']){ ?>
+		
+        	<p id="log">You are logged as <?php echo $_SESSION['pseudo'] ?>
+        
+        <!-- if the user is an admin -->
+        <?php if ($_SESSION['isAdmin']){ ?>
+			<span id="admin">Admin</span>
+        
+        <!-- end of admin -->
+        <?php } ?>
+        	</p>
+        	<a href='/members/'><img id="session-img" src="/images/profiles/profile<?php echo $_SESSION['idMember'] ?>.jpg"></a>
+        	<form action="/Members/logOut">
+        		<input type="submit" class="submit" id="logout" name= "logout" value="Logout">
+        	</form>
+        
+        <!-- else (don't matter if he's connected or he's an admin)-->
+        <?php }else{ ?>
+
+        <!-- form #login-form -->
+		<form action="/Members/signIn"  method="post" id="login-form">
+			<input type="text" name="pseudo" id="pseudo" placeholder="Login">
+			<input type="password" name="pass" id="pass" placeholder="Password">
+			<input type="submit" class="submit" id="login" name= "connexion" value="Login">
+        </form>
+        <!-- </div>-->
+        
+        <?php } ?>
+
+	</header>

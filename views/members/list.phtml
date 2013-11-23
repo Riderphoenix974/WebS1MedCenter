@@ -1,0 +1,18 @@
+<?php
+	require_once dirname (__FILE__) .'/../../model/Members.php';
+	require_once dirname (__FILE__) .'/../../controllers/MembersController.php';
+	?>
+
+<div id="profiles-list">
+	<table>
+		<?php
+			foreach ($members as $member) {
+				echo '<tr class="profile"><td><img src="/images/profiles/profile'.$member['idMember'].'.jpg"></td>';
+				echo '<td><p>'.$member['idMember'].'. '.$member['pseudo'].'</p></td>';
+				echo '<td><p><a href="/Members/MakeAdmin?idMember='.$member['idMember'].'">Make admin </a></p>';
+				echo '<p><a href="/Members/delete?idMember='.$member['idMember'].'">Delete </a></p>';
+				echo '<p><a href="/members/rss?idMember='.$member['idMember'].'"><img class="rss" src="/images/rss.png"</a></p></td></tr>';
+			}
+		?>
+	</table>
+</div>

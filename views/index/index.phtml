@@ -1,0 +1,66 @@
+<script>
+$("#slideshow").craftyslide({
+  'width': 640,
+  'height': 400,
+  'pagination': false,
+  'fadetime': 500,
+  'delay': 2500,
+});
+</script>
+
+<h2>My motto</h2>
+			
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<!--<div id="slideshow">
+	<ul>
+		<li>
+			<img src="images/SlideShow/s1.jpg" title="Surfing Mimizan 2" />
+		</li>
+		<li>
+			<img src="images/SlideShow/s2.jpg" title="Bros" />
+		</li>
+		<li>           
+			<img src="images/SlideShow/s3.jpg" title="RIB UPA" />
+		</li>                     
+	</ul>
+</div> 
+-->
+
+<!--include " ../"members/list.phtml";
+-->
+
+<div id="profiles-list">
+	<table>
+		<tr class="profile">
+			<td>
+				<img src="/images/profiles/profile<?php echo $FrontProfil[0]['idMember'] ?>.jpg">
+			</td>
+			<td>
+				<p>id : <?php echo $FrontProfil[0]['idMember']?></p>
+				<p>Pseudo : <?php echo $FrontProfil[0]['pseudo']?></p>
+			</td>
+		</tr>
+		<tr class="profile">
+			<td>
+				<img src="/images/profiles/profile<?php echo $FrontProfil[1]['idMember'] ?>.jpg">
+			</td>
+			<td>
+				<p>id : <?php echo $FrontProfil[1]['idMember']?></p>
+				<p>Pseudo : <?php echo $FrontProfil[1]['pseudo']?></p>
+			</td>
+		</tr>
+		<tr class="profile">
+			<td>
+				<img src="/images/profiles/profile<?php echo $FrontProfil[2]['idMember'] ?>.jpg">
+			</td>
+			<td>
+				<p>id : <?php echo $FrontProfil[2]['idMember']?></p>
+				<p>Pseudo : <?php echo $FrontProfil[2]['pseudo']?></p>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+

@@ -1,0 +1,257 @@
+html, body {
+	margin: 0; padding: 0;
+	font:12 px calibri, sans-serif;
+	font-family:Walkway SemiBold;
+}
+html{
+	background: url('witewall_3.png') no-repeat center fixed;
+	-webkit-background-size: cover; /* pour Chrome et Safari */
+	-moz-background-size: cover; /* pour Firefox */
+	-o-background-size: cover; /* pour Opera */
+	background-size: cover; /* version standardisée */}
+#wrapper {
+   position : relative; /* référent du footer */
+   min-height : 100%;
+}
+body{
+	color:#3C3C3C; // grey	}
+
+/* All inputs submit */
+input[type="submit"]{
+	padding:3px 7px;
+    vertical-align: baseline;
+	background: #d743ae;  /* Color Submit Button */
+    color: white;
+    border: 1px solid white;
+    moz-border-radius: 5px;  
+    border-radius: 5px;
+}
+input[type="submit"]:hover{
+	background: white;  /* Color Submit Button */
+    color: #d743ae;
+    border: 1px solid #d743ae;
+	}
+/* Header */
+header {
+    border-top:7px solid #505559;
+    margin:auto;
+    margin-top: 0;
+    background: #eee;
+    height: 98px;
+    padding: 5px;
+    font: 15px;
+    width: 100%;
+}
+header #motto{
+	font-size : 25px;
+	color : #d743ae;
+	margin-top:35px;
+	padding:0;
+}
+header p{text-align:right;}
+header p#log{
+	margin:-15px 70px;}
+header img#session-img{
+	margin:-45px 13px;
+	float:right;
+	width:60px;
+	border-radius:35px;
+	border:solid 1px #BBBBBB;}
+header p#log span#admin{
+	font-size:10px;
+	background-image:url('/images/admin.png');
+	background-repeat:no-repeat;
+	background-size:45px 45px;
+	background-position:6px -2px;
+	padding:15px;
+	}
+header table tr{vertical-align:bottom;}
+header h2{
+	color:#009297;}
+header #Logo{
+	margin: 25px 25px;
+    float: left;
+    width: 197px;
+    height: 45px;
+}
+/* Form on the right*/
+header form {
+    float: right; 
+    margin-right: 5px; 
+    height: 40px; 
+}
+/* Have email Password above zone */
+header form #pseudo, header form #pass {
+    display: block;
+    width: 100px;
+    border-radius: 2px;
+    border:none;
+    padding: 0px  3px 0;
+    margin-bottom: -1px;
+}
+header #login-form{
+	margin-top:-50px;
+	margin-right:20px;}
+
+header #login-form .submit#login {
+    height: 23px;
+    width: 60px;
+    margin-top :5px;
+	margin-left:50px;
+}
+header input#logout.submit {
+    margin-top :25px;
+}
+#sign-up{
+	float:left;
+	width:200px;
+	margin-right:20px;
+	margin-left:50px;}
+#sign-up h2{
+	font-style:italic;}
+header #login-form input[type="text"], header #login-form input[type="email"], header #login-form input[type="password"]{
+	display:block;
+	/*width:170px;*/
+	font-size:12px;
+	padding:2px;
+	padding-left:4px;
+	margin:5px;}
+option						{width:150px;}
+table#profiles img{
+	width:40px;
+	border-radius:3px;}
+table#profiles td			{padding:10px;}
+
+		/******* CSS FOR 1 Profil *****/
+div.user{
+	background:#DDDDDD;
+	width:500px;
+	margin:20px auto;
+	border-radius:5px;
+	border:solid 1px #BBBBBB;}
+div.user table tr{
+	vertical-align:top;}
+div.user img.profile{
+	margin:10px;
+	width:200px;	height:200px;
+	border-radius:5px;
+	display:inline-block;}
+div.user h1{
+	margin-top:20px;
+	margin-bottom:0;
+    font-size:40px;}
+div.user h1:before{
+	content: url('/images/F.png');background-repeat: no-repeat;
+	margin-right:5px;}
+div.user h2{
+	margin:0;
+	font-size:18px;
+	margin-top:20px;
+	margin-bottom:5px;
+	font-style:italic;}
+div.user .email{
+	margin:0;}
+div.user .website{
+	margin:0;}
+div.user .description{
+	margin-top:0;
+	margin-left:20px;}
+div.user a{
+	text-decoration:none;
+	margin-right:0;}
+/* To edit the profile */
+div.user-edit{
+	background:#DDDDDD;
+	width:500px;
+	margin:20px auto;
+	margin-bottom:60px;
+	border-radius:5px;
+	border:solid 1px #BBBBBB;}
+input#edit{
+	margin:10px;}
+div.user-edit input, div.user-edit textarea{
+	border-radius: 2px;
+	border: solid 1px #BBBBBB;
+}
+div.user-edit img{
+	margin:20px;
+	width:100px;
+	border-radius:2px;
+	border:solid 1px #BBBBBB;}
+
+		/******* CSS FOR Profiles list *****/
+div#profiles-list{
+	margin: 20px auto;
+	width:500px;}
+div#profiles-list table{
+	background:#DDDDDD;
+	border-radius: 10px;
+	border:solid 1px #BBBBBB;
+	padding:5px;
+}
+div#profiles-list table a{
+	color:#d743ae;
+	text-decoration:none;
+	font-size:12px;}
+div#profiles-list table a:hover{color:black;}
+div#profiles-list table tr.profile img.rss{
+	width:10px;
+	border:none;
+	margin:auto;}
+div#profiles-list table tr.profile img{
+	margin: 10px;
+	width:100px;
+	border-radius:2px;
+	border:solid 1px #BBBBBB;}
+div#profiles-list table tr.profile p{
+	margin:10px 10px 0 10px ;
+	font-size:16px;}
+		
+/******* CSS FOR Contactpage *****/	
+#contact{
+	margin: 25px;
+	panding: 10px;
+    font: 20px;
+}
+#contact {
+    float: left; 
+    margin-right: 30px; 
+    height: 40px; 
+}
+#contact input{
+	display:block;
+	font-size:12px;
+	padding:2px;
+	padding-left:4px;
+	margin:5px;}
+#contact .submit {
+    height: 23px;
+    width: 50px;
+    vertical-align: bottom;
+}
+#contact h1{
+color:orange;
+}
+
+	/******* CSS FOR Footer *****/
+#container {
+    padding-bottom : 25px; /* padding-bottom = hauteur du footer */
+}
+footer{
+    border-bottom:12px solid #505559;
+	position:fixed;
+   	bottom:0px;
+    width: 100%;
+	background: #eee;
+    height: 25px;
+    padding-left: 10px;
+    padding-top:5px;
+}
+footer a{
+	text-decoration:none;
+	color:#009297;
+}
+
+footer a:hover{
+	color:black;
+}

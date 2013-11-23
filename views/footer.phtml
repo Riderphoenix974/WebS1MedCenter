@@ -1,0 +1,37 @@
+	<footer>
+		<a href="/contact">Contact page |</a>
+		<?php
+			if ($_SESSION['isConnected'] == FALSE)
+			{
+
+		?>
+		<a href="/members/signup">Sign up |</a>
+		<?php 
+			}
+			if($_SESSION['isAdmin'] == TRUE && isset($_SESSION['isAdmin']))
+			{
+
+		?>
+				<a href='/members/list'>List of members |</a>
+
+
+		<?php
+
+			}
+			if ($_SESSION['isConnected'] == TRUE && isset($_SESSION['isConnected']))
+			{
+
+		?>
+
+				<a href='/members/'>My Profil Page |</a>
+
+		<?php
+
+			}
+
+		?>
+		
+				<a href="https://twitter.com/BdeBigBadWolf">Twitter page</a>
+	</footer>			
+</body>
+</html>
