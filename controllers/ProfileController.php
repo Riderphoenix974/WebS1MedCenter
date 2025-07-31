@@ -27,10 +27,17 @@ class ProfileController extends ActionController
         // member save
         // update save
 
-        Profile::editProfil($_POST['pseudo'], $_POST['email'], $_POST['website'], $_POST['description']);
+        $idMember = $_SESSION['idMember'];
+        Profile::editProfil(
+            $_POST['pseudo'],
+            $_POST['email'],
+            $_POST['website'],
+            $_POST['description'],
+            $idMember
+        );
 
-        
-    
+        $_SESSION['flash_message'] = 'Your profil has been edited';
+        header("Location: /members/");
     }
     
     /**
