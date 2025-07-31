@@ -1,4 +1,8 @@
 
+<?php if (isset($_SESSION['flash_message'])) { ?>
+<p class="message"><?php echo $_SESSION['flash_message']; unset($_SESSION['flash_message']); ?></p>
+<?php } ?>
+
 <div class="user">
 	<table>
 		<tr>
