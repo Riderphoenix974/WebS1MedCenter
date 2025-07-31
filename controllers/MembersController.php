@@ -21,12 +21,12 @@ class MembersController extends ActionController
         $_SESSION['pseudo']=$_POST['pseudo'];
         $_SESSION['isConnected']=TRUE;
 
-        header("Location: /members/");
+        header('Location: ' . BASE_URL . 'members/');
         }
 
         else {
             $_SESSION['isConnected']=FALSE;
-            header("Location: /");
+            header('Location: ' . BASE_URL);
         }
     }
     
@@ -38,13 +38,13 @@ class MembersController extends ActionController
         if($isConnected)
         {
             $_SESSION['isConnected']=TRUE;
-            header("Location: /members/");
+            header('Location: ' . BASE_URL . 'members/');
 
         }
 
         else {
             $_SESSION['isConnected']=FALSE;
-            header("Location: /");
+            header('Location: ' . BASE_URL);
         }
 
     }
@@ -63,7 +63,7 @@ class MembersController extends ActionController
             Members::delete($_GET['idMember']);
         }
         }
-        header("Location: /members/list");
+        header('Location: ' . BASE_URL . 'members/list');
     }
     
     public function MakeAdminAction() // Login
@@ -76,7 +76,7 @@ class MembersController extends ActionController
             Members::MakeAdmin($_GET['idMember']);
         }
         }
-        header("Location: /members/list");
+        header('Location: ' . BASE_URL . 'members/list');
     }
     public function logOutAction() // Login
     {
@@ -86,7 +86,7 @@ class MembersController extends ActionController
             Members::logOut();
             }
         
-        header("Location: /");
+        header('Location: ' . BASE_URL);
     }
     public function rssAction()
     {

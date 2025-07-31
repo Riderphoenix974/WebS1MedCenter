@@ -25,7 +25,7 @@ class Profile
 
             mysqli_query($bdd, "UPDATE member SET pseudo = '$pseudo', email ='$email', website ='$website', description='$description' WHERE idMember = '$idMember'");
 
-            header("Location: /");
+            header('Location: ' . BASE_URL);
         }
         
 
