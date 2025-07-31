@@ -41,21 +41,23 @@ class Members
         //SELECT 
      	global $bdd;
      	
-        $result = mysqli_query($bdd, "SELECT * FROM member WHERE pseudo ='$username' AND password = '$password'");
+        $stmt = mysqli_prepare($bdd, "SELECT * FROM member WHERE pseudo = ?");
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
 
-		$row = $result -> fetch_array(MYSQLI_NUM);
+        if ($row && password_verify($password, $row['password'])) {
 
-        if ($row[0]!=NULL) {
-
-            $_SESSION['idMember']=$row[0];
-            $_SESSION['pseudo']=$row[1];
-            $_SESSION['email']=$row[2];
-            //$_SESSION['password']=$row[3];
-            $_SESSION['sex']=$row[4];
-            $_SESSION['isAdmin']=$row[5];
-            $_SESSION['description']=$row[6];
-            $_SESSION['image']=$row[7];
-            $_SESSION['website']=$row[8];
+            $_SESSION['idMember']=$row['idMember'];
+            $_SESSION['pseudo']=$row['pseudo'];
+            $_SESSION['email']=$row['email'];
+            //$_SESSION['password']=$row['password'];
+            $_SESSION['sex']=$row['sex'];
+            $_SESSION['isAdmin']=$row['isAdmin'];
+            $_SESSION['description']=$row['description'];
+            $_SESSION['image']=$row['image'];
+            $_SESSION['website']=$row['website'];
 
             return TRUE;
 			
@@ -71,20 +73,22 @@ class Members
 
         global $bdd;
 
-        // SELECT
-        $check=mysqli_query($bdd,"SELECT * from member where pseudo='$pseudo'");
+        $stmt = mysqli_prepare($bdd, "SELECT idMember FROM member WHERE pseudo = ?");
+        mysqli_stmt_bind_param($stmt, "s", $pseudo);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
 
-        $row= mysqli_fetch_array($check);
-
-        if($pseudo==$row[1] && !$_SESSION['isConnected']) // User alrdeady in database
+        if (mysqli_stmt_num_rows($stmt) > 0 && !$_SESSION['isConnected']) // User already in database
         {
             echo("already in");
             return FALSE;
         }
 
         else{
-        mysqli_query($bdd,"INSERT INTO member (pseudo,email,password,sex)
-		VALUES ('$pseudo','$email','$password','$sex')");
+        $hashed = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = mysqli_prepare($bdd,"INSERT INTO member (pseudo,email,password,sex) VALUES (?,?,?,?)");
+        mysqli_stmt_bind_param($stmt, "ssss", $pseudo,$email,$hashed,$sex);
+        mysqli_stmt_execute($stmt);
 
         $_SESSION['pseudo']=$pseudo;
         $_SESSION['email']=$email;
